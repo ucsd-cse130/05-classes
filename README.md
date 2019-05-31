@@ -1,6 +1,6 @@
 # Assignment 5: Type Classes (255 points)
 
-## Due by TODO
+## Due by Sunday 6/9/2019, 23:59:59PM
 
 ## Overview
 
