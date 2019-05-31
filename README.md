@@ -330,6 +330,8 @@ When you are done you should see this behavior
 +++ OK, passed 100 tests.
 ```
 
+`removeMin` should throw an error if given an empty tree.
+
 ### (20 points): Remove
 
 Finally, use `removeMin` to fill in the definition of
@@ -341,6 +343,9 @@ remove :: (Ord a) => a -> BST a -> BST a
 such that `remove x t` returns the tree containing all
 elements _except_ x. Of course, the new set should
 satisfy the binary-search-ordering property.
+
+`remove x t` should return `t` unchanged if `x` is not
+in `t`.
 
 When you are done, you should see the following behavior.
 
@@ -412,9 +417,13 @@ First, copy and update your old code from
 
 - `Lexer.x`
 - `Parser.y`
+- `Eval.hs`
 
-and copy your implementation from the individual cases of `eval`
-to obtain the implementation of the _first 9_ cases of `evalE`
+`Lexer.x` can be copied entirely. For `Parser.y`, only copy the
+parts you wrote - some of the other starter code has changed.
+For `Eval.hs`, copy `evalOp`, `lookupId`, and `prelude`, and
+adapt your `eval` implementation to become the _first 9_ cases
+of `evalE`.
 
 ```haskell
 evalE :: Env -> Expr -> Either Value Value
@@ -446,7 +455,7 @@ Next, complete the implementation of
 evalE env (EThr e)       = error "TBD"
 ```
 
-when you are done, you should see the following behavior:
+When you are done, you should see the following behavior:
 
 ```haskell
 λ> eval [] (EBin Plus (EInt 1) (EInt 2))
@@ -457,11 +466,14 @@ when you are done, you should see the following behavior:
 2
 λ> eval [] (Bin Plus (EThr (EInt 1)) (EThr (EInt 2)))
 1
-λ> eval [] (Thr (EBin Plus (EInt 1) (EInt 2)))
+λ> eval [] (EThr (EBin Plus (EInt 1) (EInt 2)))
 3
-λ> eval [] (Thr (EBin Plus (EInt 1) (EThr (EInt 2))))
+λ> eval [] (EThr (EBin Plus (EInt 1) (EThr (EInt 2))))
 2
 ```
+
+(You will have to modify the other evalE cases too to get
+this to work.)
 
 ### (30 points): Catch
 
@@ -484,9 +496,9 @@ when you are done, you should see the following behavior:
 12
 λ> eval [] (tryZ (Bin Plus (EThr (EInt 1)) (EThr (EInt 2))))
 11
-λ> eval [] (tryZ (Thr (EBin Plus (EInt 1) (EInt 2))))
+λ> eval [] (tryZ (EThr (EBin Plus (EInt 1) (EInt 2))))
 13
-λ> eval [] (tryZ (Thr (EBin Plus (EInt 1) (EThr (EInt 2)))))
+λ> eval [] (tryZ (EThr (EBin Plus (EInt 1) (EThr (EInt 2)))))
 12
 ```
 

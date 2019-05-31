@@ -1,17 +1,17 @@
 foldr =
-  let foldr' f b xs = if xs == [] 
+  let foldr1 f b xs = if xs == [] 
                         then b 
                         else let h = head xs in 
                              let t = tail xs in 
-                               f h (foldr' f b t) 
+                               f h (foldr1 f b t) 
   in 
-     foldr'
+     foldr1
 
 ,
 
 add = 
-  let add' x y = x + y in 
-      add'
+  let add1 x y = x + y in 
+      add1
 
 ,
 
