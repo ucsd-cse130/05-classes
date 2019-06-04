@@ -9,10 +9,10 @@ import qualified Language.Nano.Eval    as Nano
 import qualified Data.BST              as BST
 import qualified Test.Tasty.QuickCheck as QC
 import           System.FilePath
-
+import           GHC.IO.Encoding
 
 main :: IO ()
-main = runTests 
+main = setLocaleEncoding utf8 >> runTests 
   [ bst_props  -- 85
   , nano_eval  -- 55 
   , nano_exn   -- 60 
