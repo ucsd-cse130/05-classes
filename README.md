@@ -460,11 +460,11 @@ When you are done, you should see the following behavior:
 ```haskell
 λ> eval [] (EBin Plus (EInt 1) (EInt 2))
 3
-λ> eval [] (Bin Plus (EThr (EInt 1)) (EInt 2))
+λ> eval [] (EBin Plus (EThr (EInt 1)) (EInt 2))
 1
-λ> eval [] (Bin Plus (EInt 1) (EThr (EInt 2)))
+λ> eval [] (EBin Plus (EInt 1) (EThr (EInt 2)))
 2
-λ> eval [] (Bin Plus (EThr (EInt 1)) (EThr (EInt 2)))
+λ> eval [] (EBin Plus (EThr (EInt 1)) (EThr (EInt 2)))
 1
 λ> eval [] (EThr (EBin Plus (EInt 1) (EInt 2)))
 3
@@ -490,11 +490,11 @@ when you are done, you should see the following behavior:
 
 λ> eval [] (tryZ (EBin Plus (EInt 1) (EInt 2)))
 3
-λ> eval [] (tryZ (Bin Plus (EThr (EInt 1)) (EInt 2)))
+λ> eval [] (tryZ (EBin Plus (EThr (EInt 1)) (EInt 2)))
 11
-λ> eval [] (tryZ (Bin Plus (EInt 1) (EThr (EInt 2))))
+λ> eval [] (tryZ (EBin Plus (EInt 1) (EThr (EInt 2))))
 12
-λ> eval [] (tryZ (Bin Plus (EThr (EInt 1)) (EThr (EInt 2))))
+λ> eval [] (tryZ (EBin Plus (EThr (EInt 1)) (EThr (EInt 2))))
 11
 λ> eval [] (tryZ (EThr (EBin Plus (EInt 1) (EInt 2))))
 13
