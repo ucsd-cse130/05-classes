@@ -2,7 +2,7 @@ import qualified Language.Nano.Types  as Nano
 import qualified Language.Nano.Eval   as Nano
 import           Language.Nano.Repl
 import           Text.Printf
-import           GHC.IO.Encodingo
+import           GHC.IO.Encoding
 
 main :: IO ()                             
 main = do
