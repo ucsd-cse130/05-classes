@@ -33,7 +33,7 @@ nano_repl sc = testGroup "Repl"
  , bc "tests/input/sh6.cmd" 15 "repl-6" 
  ]
  where 
-  bc f pts name = binTest sc (BinCmd "stack run" f (f <.> "out") pts name)
+  bc f pts name = binTest sc (BinCmd "stack run --allow-different-user" f (f <.> "out") pts name)
 
 -------------------------------------------------------------------------------
 -- | Nano-Exceptions
