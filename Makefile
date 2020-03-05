@@ -3,7 +3,7 @@
 COURSE=cs130sp19
 ASGN=05
 NAME=classes
-STACK=stack --allow-different-user
+STACK=stack
 BUILD_OPTS=--ghc-options -O0 
 #####################################################################################################
 
@@ -29,12 +29,6 @@ tags:
 turnin:
 	git commit -a -m "turnin"
 	git push origin master
-
-upstream:
-	git remote add upstream https://github.com/ucsd-cse130/05-classes.git
-
-update:
-	git pull upstream master
 
 ghci:
 	$(STACK) exec -- ghci
