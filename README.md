@@ -1,6 +1,6 @@
 # Assignment 5: Type Classes (255 points)
 
-## Due by Sunday 6/9/2019, 23:59:59PM
+## Due by Sunday 2020-03-15, 23:59:59PM
 
 ## Overview
 
@@ -156,8 +156,8 @@ Node 5 Leaf (Node 20 (Node 10 Leaf Leaf) (Node 30 Leaf Leaf))
 [True,False,True,False,True,False,True,False]
 ```
 
-Writing tests is tedious, instead we will check properties!
-The property `prop_contains_elt` states that an trees created
+Writing these tests can be tedious, instead we will check properties!
+The property `prop_contains_elt` states that trees created by `build xs`
 `contain` those elements `x` that are are in the input list `xs`:
 
 ```haskell
@@ -228,8 +228,8 @@ Node 5 Leaf (Node 20 (Node 10 Leaf (Node 12 Leaf Leaf)) (Node 30 Leaf Leaf))
 True
 ```
 
-Writing tests by hand is tedious. Lets check the *property*
-that the added elements are indeed in the new set.
+Once again, we will check the *property* that the added elements are indeed in
+the new set.
 (Make sure you understand the properties!)
 
 ```haskell
@@ -245,7 +245,7 @@ that the added elements are indeed in the new set.
 
 ### (5 points): Debug the Property
 
-We’ve seen a bunch of properties go sailing through. But consider this:
+We've seen a bunch of properties go sailing through. But consider this:
 
 ```haskell
 λ> quickCheck prop_multiset
@@ -260,7 +260,7 @@ nevertheless you will see some kind of list. Well, lets see why the
 property failed, by running the test on the failing input that QuickCheck
 has automatically found for us!
 
-Lets run the property on the _failing input_. How? Well the property is
+Let's run the property on the _failing input_. How? Well the property is
 just a function
 
 ```haskell
@@ -304,10 +304,10 @@ we want to check only that the `BST` has all the elements from `xs`
 but _excluding any duplicates_.
 
 Fix the property so that it passes. Do this in a meaningful way --
-don’t just replace it with `True`.
+don't just replace it with `True`.
 
-**Note:** Use the above strategy to fix your code when there are _other_
-failing tests too.
+**Note:** Use the above strategy of running the test on the failing input to
+fix your code when there are _other_ failing tests too.
 
 ### (10 points): Remove Minimum
 
@@ -368,7 +368,7 @@ Node 5 Leaf (Node 30 (Node 10 Leaf Leaf) Leaf)
 
 ## Problem 2: Exceptions
 
-Next, we will add _exceptions_ to the `nano` language, in several steps.
+Next, we will add _exceptions_ to the `Nano` language, in several steps.
 
 
 ### Exceptional Expressions
