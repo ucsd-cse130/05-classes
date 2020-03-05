@@ -368,7 +368,7 @@ Node 5 Leaf (Node 30 (Node 10 Leaf Leaf) Leaf)
 
 ## Problem 2: Exceptions
 
-Next, we will add _exceptions_ to the `Nano` language, in several steps.
+Next, we will add _exceptions_ to the `nano` language, in several steps.
 
 
 ### Exceptional Expressions
