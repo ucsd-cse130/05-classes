@@ -1,7 +1,5 @@
 # Assignment 5: Type Classes (255 points)
 
-## Due by Sunday 2020-03-15, 23:59:59PM
-
 ## Overview
 
 The overall objective of this assignment is to get some experience 
