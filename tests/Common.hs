@@ -3,6 +3,7 @@
 
 module Common where
 
+import           Data.List (isSuffixOf)
 import           Data.IORef
 import           Test.Tasty
 import           Test.Tasty.HUnit
@@ -84,7 +85,7 @@ mkBinTest execS inF expF = do
     c          <- waitForProcess ph
     expected   <- readFile expF
     actual     <- readFile log
-    return (expected == actual)
+    return (expected `isSuffixOf` actual)
   where
     log  = inF <.> "log"
     cmd  = printf "%s < %s" execS inF
